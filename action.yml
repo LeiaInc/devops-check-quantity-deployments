@@ -11,7 +11,7 @@ inputs:
   ecr-name:
     description: The ECR Name
     required: true
-  qtd-images:
+  qtd-deployment:
     description: How many deployment in the cluster are acceptably
     required: true
 runs:
@@ -19,5 +19,5 @@ runs:
   image: Dockerfile
   args:
     - ${{ inputs.eks-name }}
-    - ${{ inputs.repo-name }}
-    - ${{ inputs.qtd-images }}
+    - ${{ inputs.ecr-name }}
+    - ${{ inputs.qtd-deployment }}
