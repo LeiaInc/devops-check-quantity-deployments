@@ -1,0 +1,23 @@
+name: AKS Check Quantity Deployment
+author: Douglas Francisco Cardoso <douglas.cardoso.nl@leiainc.com>
+description: This can check the quantity of deployments in the AKS
+branding:
+  icon: archive
+  color: gray-dark
+inputs:
+  eks-name:
+    description: The EKS Name
+    required: true
+  repo-name:
+    description: The ECR Name
+    required: true
+  qtd-images:
+    description: How many deployment in the cluster are acceptably
+    required: true
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.eks-name }}
+    - ${{ inputs.repo-name }}
+    - ${{ inputs.qtd-images }}
