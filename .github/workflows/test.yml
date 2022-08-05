@@ -6,6 +6,7 @@ jobs:
   set-env-variable:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.LEIALOFT_DEVELOPMENT_AWS_ACCESS_KEY_ID }}
