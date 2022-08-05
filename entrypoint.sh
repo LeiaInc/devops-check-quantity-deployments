@@ -12,11 +12,11 @@ echo "$REPO_COUNT"
 
 if [ "$REPO_COUNT" -ge "$QTD" ];
 then
-  echo "ERROR: You should have less than {$QTD} apps deployed to deploy a new branch or commit.
-  Branch deploy failure. Please delete old or uneeded branches from your repository via Github."
+  echo "::error::You should have less than {$QTD} apps deployed to deploy a new branch or commit."
+  echo "::error::Branch deploy failure. Please delete old or uneeded branches from your repository via Github."
+#  echo "ERROR: You should have less than {$QTD} apps deployed to deploy a new branch or commit.
+#Branch deploy failure. Please delete old or uneeded branches from your repository via Github."
   exit 1
 else
-  echo "OK: Deploying ${REPO_COUNT} app now..."
+  echo "::debug::Deploying ${REPO_COUNT} app right now..."
 fi
-
-echo "##[set-output name=lowercase;]$(echo "${REPO_COUNT}" | tr '[:upper:]' '[:lower:]')"
