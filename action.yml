@@ -8,7 +8,7 @@ inputs:
   eks-name:
     description: The EKS Name
     required: true
-  repo-name:
+  ecr-name:
     description: The ECR Name
     required: true
   qtd-images:
