@@ -16,4 +16,6 @@ jobs:
         with:
           eks-name: leialoft-development-eks
           ecr-name: leialoft-service
-          qtd-deployment: 7
+          qtd-deployment: 4
+      - name: continue
+        run: echo "yes"
